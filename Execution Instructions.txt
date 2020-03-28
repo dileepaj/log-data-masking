@@ -1,0 +1,41 @@
+1)Windows Command Line
+
+Prerequisites - CMake should be installed
+		MinGW should be installed
+
+1.Navigate to the Project Directory (log-data-masking/LDAL)
+2.Execute the following commands in command prompt terminal
+	mkdir build 				//make a seperate directory for the build files
+	cd build
+	cmake .. -G "MinGW Makefiles"		//Command to build the CMake build file using MinGW compiler(If MinGW is not specified, cmake.. command will build using visual studio by default)
+	mingw32-make				//Create the executable .exe file
+
+2)Linux Terminal
+
+Prerequisites - CMake should be installed
+		MinGW should be installed
+
+1.Navigate to the Project Directory (log-data-masking/LDAL)
+2.Exclude the main.mm file from the CMakeLists.txt file and include the main.cpp
+3.Execute the following commands in command prompt terminal
+	mkdir build 			//make a seperate directory for the build files
+	cd build
+	cmake ..			//Command to build the CMake build file using MinGW compiler.
+	make				//Create the executable .exe file
+
+
+
+1) Clone/Download the log-data-masking repository into your local repository.
+2) Create a databse named "sunstitutiondb" and add the given tables using the csv files provided in log-data-masking/substitutiondbtables
+3) Insert your log file into LogMaskingTool/Files/log.txt
+4) Write a suitable script for your log file that captures all the required variables into log-data-masking/Files/script.txt (Example log and script files can be found in log-data-masking/Files/Examples)
+5) Enter the following details into log-data-masking/Files/maskingScript.txt file to mask sensitive information.
+	    i)Enter your MySQL database connection string as follows - $DB_CONNECTION_STRING.SetDbString(hostname_username_password_databasename_port) (Example -> localhost_admin_admin_substitutiondb_0)
+	   ii)Enter the variable names of the fields that require masking as follows - {$FIRST_NAME,$LAST_NAME,$TELEPHONE_NUMBER,$ADDRESS}:=LIST
+	  iii)You can input one or all 16 available variable names into the above statement.
+	   iv)The fields available are  FIRST_NAME, LAST_NAME, FULL_NAME, DATE, MONTH, YEAR, HOUR, MINUTE, SECONDS, TELEPHONE_NUMBER, ADDRESS, POSTAL_CODE, INTEGER, PRICE, NIC, EMAIL.
+	    v)The variable names of the variables that you require to be masked in the script file should be same as the variable names provided in iv) above.
+	   vi)Add range of replacement values for integer and price maskinbg as follows if required ($INTEGER.SetLValue(10000),$INTEGER.SetRValue(20000),$PRICE.SetLValue(10000),$PRICE.SetRValue(20000)).
+	   
+6) Execute the LogMaskingTool.exe found in log-data-masking/LDAL/cmake-build-debug
+7) The masked log file will be created in log-data-masking/Files/maskedLog.txt
