@@ -1,0 +1,337 @@
+Function:=MaskInnerFunction
+	$ARG.SeekToBegin
+	$ARG.GetCurrentElement:=ROOTNODE
+	$ARG.Seek(#1)
+	$ARG.GetCurrentElement:=ATTRIBUTE
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(TEST_SUITE))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(TEST_SUITE)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=testSuiteName
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($testSuiteName)):=LIST2
+			$LIST2.MaskValue($testSuiteName)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(FIRST_NAME))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(FIRST_NAME)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=fName
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($fName)):=LIST2
+			$LIST2.MaskFirstName($fName)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(LAST_NAME))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(LAST_NAME)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=lName
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($lName)):=LIST2
+			$LIST2.MaskLastName($lName)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(FULL_NAME))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(FULL_NAME)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=fullName
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($fullName)):=LIST2
+			$LIST2.MaskFullName($fullName)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(DATE))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(DATE)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=date
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($date)):=LIST2
+			$LIST2.MaskDate($date)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(MONTH))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(MONTH)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=month
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($month)):=LIST2
+			$LIST2.MaskMonth($month)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(YEAR))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(YEAR)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=year
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($year)):=LIST2
+			$LIST2.MaskYear($year)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(HOUR))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(HOUR)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=hour
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($hour)):=LIST2
+			$LIST2.MaskHour($hour)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(MINUTE))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(MINUTE)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=minute
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($minute)):=LIST2
+			$LIST2.MaskMinute($minute)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(SECONDS))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(SECONDS)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=seconds
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($seconds)):=LIST2
+			$LIST2.MaskSeconds($seconds)
+			$LIST.GetNextElement:=ELEM
+		Do
+
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(TELEPHONE_NUMBER))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(TELEPHONE_NUMBER)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=telnum
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($telnum)):=LIST2
+			$LIST2.MaskTelNum($telnum)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(ADDRESS))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(ADDRESS)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=address
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($address)):=LIST2
+			$LIST2.MaskAddress($address)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(POSTAL_CODE))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(POSTAL_CODE)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=postalcode
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($postalcode)):=LIST2
+			$LIST2.MaskPostalCode($postalcode)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(INTEGER))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(INTEGER)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=integer
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($integer)):=LIST2
+			$LIST2.GetCurrentElement.SetRValue($ATTRIBUTE.GetRValue)
+			$LIST2.GetCurrentElement.SetLValue($ATTRIBUTE.GetLValue)
+			$LIST2.MaskInteger($integer)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(PRICE))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(PRICE)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=price
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($price)):=LIST2
+			$LIST2.GetCurrentElement.SetRValue($ATTRIBUTE.GetRValue)
+			$LIST2.GetCurrentElement.SetLValue($ATTRIBUTE.GetLValue)
+			$LIST2.MaskPrice($price)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(NIC))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(NIC)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=nic
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($nic)):=LIST2
+			$LIST2.MaskNIC($nic)
+			$LIST.GetNextElement:=ELEM
+		Do
+		
+	EndIf	
+	
+	If($ATTRIBUTE.GetValue.IsStringEqualTo(EMAIL))
+		$ROOTNODE.FilterSubtree($Item.GetValue.IsStringEqualTo(EMAIL)):=LIST
+		$LIST.SeekToBegin()
+		$LIST.GetCurrentElement:=ELEM		
+		
+		While($ELEM.CheckNotNull)
+			$ELEM.FirstChild.FirstChild.GetValue:=eMail
+			$ROOTNODE.FilterSubtree($Item.GetValue.IsHavingSubstring($eMail)):=LIST2
+			$LIST2.MaskEmail($eMail)
+			$LIST.GetNextElement:=ELEM
+		Do		
+	EndIf
+		
+EndFunction
+
+Function:=MaskFunction
+	$ARG.SeekToBegin
+	$ARG.GetCurrentElement:=THEROOTNODE
+	$ARG.Seek(#1)
+	$ARG.GetCurrentElement:=LISTNEW
+	$LISTNEW.SeekToBegin()
+	$LISTNEW.GetCurrentElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf	
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf
+	$LISTNEW.GetNextElement:=ELEM
+	If($ELEM.CheckNotNull)
+		{$THEROOTNODE,$ELEM}:=FUNCARG
+		MaskInnerFunction($FUNCARG)
+	EndIf		
+		
+EndFunction

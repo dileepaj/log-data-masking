@@ -1,0 +1,23 @@
+// Variable definitions
+$FIRST_NAME = $(STRING)
+$LAST_NAME = $(STRING)
+$FULL_NAME = $(TEXT)
+$TELEPHONE_NUMBER = $(NUMBER)
+$ADDRESS = $(TEXT)
+$POSTAL_CODE = $(NUMBER)
+$INTEGER = $(NUMBER)
+$PRICE = $(TEXT)
+$NIC = $(TEXT)
+
+$$FIRST_NAME_LINE = ['My first name is ',$FIRST_NAME]
+$$LAST_NAME_LINE = ['My last name is ',$LAST_NAME]
+$$FULL_NAME_LINE = ['My full name is ',$FULL_NAME]
+$$TEL_NUM_LINE = ['My telephone number is ',$TELEPHONE_NUMBER]
+$$POSTAL_ADDRESS_LINE = ['My postal address is ',$ADDRESS]
+$$POSTAL_CODE_LINE = ['My postal code is ',$POSTAL_CODE]
+$$INDEX_NUMBER_LINE = ['My index number is ',$INTEGER]
+$$PRICE_LINE = ['My salary is ',$PRICE]
+$$NATIONAL_ID_LINE = ['My national id number is ',$NIC]
+$$NONEMPTY_LINE = [$(TEXT)]
+
+$$$PERSON_BLOCK = [$$FIRST_NAME_LINE,$$LAST_NAME_LINE,$$FULL_NAME_LINE,$$TEL_NUM_LINE,$$POSTAL_ADDRESS_LINE,$$POSTAL_CODE_LINE,$$INDEX_NUMBER_LINE,$$PRICE_LINE,$$NATIONAL_ID_LINE]

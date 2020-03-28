@@ -1,0 +1,18 @@
+My first name is Jack
+My last name is Ryan
+My full name is Jack Ryan
+My telephone number is 25349685
+My postal address is Lille Strandgate 3 Postboks 533 2304 Hamar
+My postal code is 2420
+My index number is 12347
+My salary is 10,383.435
+My national id number is 21089645843
+My first name is John
+My last name is Carter
+My full name is John Carter
+My telephone number is 33673589
+My postal address is Frogsvei 44 3611 Kongsberg
+My postal code is 2322
+My index number is 17654
+My salary is 15,932.765
+My national id number is 11048954281

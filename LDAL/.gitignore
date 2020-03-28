@@ -1,0 +1,13 @@
+# Removes test files
+.idea
+.vscode
+
+# Remove XCode related files
+FlexibleComputerLanguage.xcodeproj/
+
+# Remove log files
+logs
+*.log
+
+#remove cmake files
+cmake-build-debug/
